@@ -1,0 +1,16 @@
+<div id="fileView">
+    <div class="row">
+        <div class="col col-md-6 col-sm-6 col-xs-12">
+            <h1>File-Management</h1>
+            <div class="btn-group btn-group-sm">
+                <button type="button" class="btn btn-primary" ng-click="fvm.openFileImportModal()"><span class="glyphicon glyphicon-transfer"></span> Import</button>
+            </div>
+        </div>
+        <div class="col col-md-6 col-sm-6 col-xs-12" style="text-align:right;">
+            <p>
+                <span value="fvm.files.length" style="font-size:50pt;" count-up></span> Files
+            </p>
+        </div>
+    </div>
+    <file-management data="fvm.files"></file-management>
+</div>

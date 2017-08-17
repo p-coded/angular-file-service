@@ -1,0 +1,45 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="fivm.closeModal()"><span aria-hidden="true">&times;</span></button>
+    <h4 class="modal-title" id="myModalLabel">Datei: {{fivm.file.properties.name}}</h4>
+</div>
+<div class="modal-body">
+    <table class="table table-condensed table-bordered app-table-file">
+        <tbody>
+            <tr>
+                <th class="col-1">Filename</th>
+                <td class="col-2">{{fivm.file.properties.name}}</td>
+            </tr>
+            <tr>
+                <th class="col-1">Size</th>
+                <td class="col-2"><span ng-bind="fivm.file.properties.size | convertToMb"></span></td>
+            </tr>
+            <tr>
+                <th class="col-1">Type</th>
+                <td class="col-2"><span ng-bind="fivm.file.properties.type"></span></td>
+            </tr>
+            <tr>
+                <th class="col-1">Datatype</th>
+                <td class="col-2"><span ng-bind="fivm.file.properties.dataType"></span></td>
+            </tr>
+            <tr>
+                <th class="col-1">Modified</th>
+                <td class="col-2"><span ng-bind="fivm.file.properties.lastModified | date: 'yyyy / MM / dd hh:mm:ss a'"></span></td>
+            </tr>
+            <tr>
+                <th class="col-1">Uploaded</th>
+                <td class="col-2"><span ng-bind="fivm.file.properties.uploaded | date: 'yyyy / MM / dd hh:mm:ss a'"></span></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="image-preview" ng-if="fivm.file.isImage()">
+        <img ng-src="{{fivm.file.data}}" style="max-width:100%;">
+    </div>
+    <div class="json-preview" ng-if="fivm.file.isJson()" >
+        <pre style="overflow:scroll; max-height: 250px;" ng-bind="fivm.file.data | json"></pre>
+    </div>
+    <div class="text-preview" ng-if="fivm.file.isText()">
+        <pre style="overflow:scroll; max-height: 250px;" ng-bind="fivm.file.data"></pre>
+    </div>
+</div>
+

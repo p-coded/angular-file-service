@@ -1,0 +1,82 @@
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>ENTW | Patrick Wettlaufer</title>
+
+        <!--<base href="/">-->
+
+        <!-- Bootstrap -->
+        <link type="text/css" href="lib/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+        <link type="text/css" href="css/app.css" rel="stylesheet">
+        <link type="text/css" href="css/file-input-directive.css" rel="stylesheet">
+        <link type="text/css" href="css/files.view.css" rel="stylesheet">
+        <link type="image/x-icon" rel="shortcut icon" href="img/favicon.png" >
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <div><ng-include src="config.templates.app.navigation" ></ng-include></div>
+        <div class="container">
+            <div class="container-heading">
+                <div class="container-title"><a href="#!/"><img class="img text-center" src="img/logo_pcoded.png" style="height:100px;"></a></div>
+            </div>
+
+            <div class="container-body">
+                <main ng-view class="view-animate"></main>
+            </div>
+
+            <div class="container-footer">
+            </div>
+        </div>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+        <script type="text/javascript" src="lib/jquery-3.2.1.min.js"></script>
+
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script type="text/javascript" src="lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="lib/angular-1.6.5/angular.js"></script>
+        <script type="text/javascript" src="lib/angular-1.6.5/angular-animate.min.js"></script>
+        <script type="text/javascript" src="lib/angular-1.6.5/angular-route.min.js"></script>
+        <script type="text/javascript" src="lib/angular-ui-bootstrap-2.5.0/ui-bootstrap-tpls-2.5.0.js"></script>
+
+        <!-- Loading the angular app module -->
+        <script type="text/javascript" src="js/app/app.module.js"></script>
+        <script type="text/javascript" src="js/app/app.config.js"></script>
+        <script type="text/javascript" src="js/app/app.controller.js"></script>
+        <script type="text/javascript" src="js/app/app.route.config.js"></script>
+
+        <script type="text/javascript" src="js/utils/utils.module.js"></script>
+        <script type="text/javascript" src="js/controllers/navigation.controller.js"></script>
+        <script type="text/javascript" src="js/filter/filter.module.js"></script>
+        <script type="text/javascript" src="js/services/services.modul.js"></script>
+        <script type="text/javascript" src="views/views.module.js"></script>
+        
+        <script type="text/javascript" src="js/controllers/file-import-modal.controller.js"></script>
+        <script type="text/javascript" src="js/controllers/file-info-modal.controller.js"></script>
+        <script type="text/javascript" src="js/controllers/file-management-modal.controller.js"></script>
+        <script type="text/javascript" src="js/services/file.service.js"></script>
+        <script type="text/javascript" src="js/services/base64.service.js"></script>
+        <script type="text/javascript" src="js/directives/file-input.directive.js"></script>
+        <script type="text/javascript" src="js/directives/file-management.directive.js"></script>
+        <script type="text/javascript" src="js/filter/files.filter.js"></script>
+
+        <script type="text/javascript" src="views/demo/demo.module.js"></script>
+        <script type="text/javascript" src="views/demo/demo.config.js"></script>
+        <script type="text/javascript" src="views/demo/demo.route.config.js"></script>
+        <script type="text/javascript" src="views/demo/demo.controller.js"></script>
+        <script type="text/javascript" src="views/files/files.module.js"></script>
+        <script type="text/javascript" src="views/files/files.config.js"></script>
+        <script type="text/javascript" src="views/files/files.route.config.js"></script>
+        <script type="text/javascript" src="views/files/files.controller.js"></script>
+    </body>
+</html>

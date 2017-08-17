@@ -1,0 +1,43 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 3, 2017, 1:10:55 PM
+    Author     : wet2lol
+*/
+
+ul.list-inline.app-list-file-preview
+{
+
+}
+
+
+
+ul.list-inline.app-list-file-preview > li {
+    display: inline-block;
+    padding: 3px 5px;
+    font-size: 7.5pt;
+    margin:1px;
+    background: #EEE;
+    border: 1px solid #DDD;
+}
+
+ul.list-inline.app-list-file-preview > li.ok {
+    /*    background:#90ed7d;*/
+}
+
+ul.list-inline.app-list-file-preview > li.nok {
+    background:#dca7a7;
+}
+
+form#fileInputForm input
+{
+    text-align: left;
+    padding: 0;
+}
+form#fileInputForm input:hover
+{
+    cursor: pointer;
+}

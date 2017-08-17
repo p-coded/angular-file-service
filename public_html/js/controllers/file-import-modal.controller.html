@@ -1,0 +1,69 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="fivm.closeModal()"><span aria-hidden="true">&times;</span></button>
+    <h4 class="modal-title" id="myModalLabel">File-Import</h4>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <file-input save="fivm.importSelectedFiles(files)" allowed-file-types="fivm.allowedFileTypes" allowed-file-type-extensions="fivm.allowedFileTypeExtensions"></file-input>
+        </div>
+        <div class="col col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="btn-group btn-group-justified" role="group" aria-label="..." style="margin-bottom:10px;">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary" ng-click="fivm.emptyImportedFiles()" ng-disabled="fivm.importedFilesArray.length === 0"><span class="glyphicon glyphicon-eject"></span>&zwj; Emtpy</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-disabled="fivm.importedFilesArray.length === 0" ng-click="fivm.storeImportedFilesAndCloseModal()"><span class="glyphicon glyphicon-floppy-disk"></span>&zwj; Save & Close</button>
+                </div>
+            </div>
+
+            <div class="message"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div style="border-radius:3px; background:#FAFAFA; border:1px solid #D8D8D8; padding:10px; position:relative; overflow:hidden; overflow-x:scroll; overflow-y:scroll; max-height:500px;">
+
+                <table class="table table-hover table-condensed" style="font-size:8pt;">
+                    <thead>
+                        <tr>
+                            <th>Filename</th>
+                            <th>Size</th>
+                            <th>Type</th>
+                            <th>Last Modified</th>
+                            <th>Uploaded</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="file in fivm.importedFilesArray track by $index">
+                            <td><span ng-bind="file.properties.name"></span></td>
+                            <td><span ng-bind="file.properties.size | convertToMb"></span></td>
+                            <td><span ng-bind="file.properties.type"></span></td>
+                            <td><span ng-bind="file.properties.lastModified | date: 'yyyy / MM / dd hh:mm:ss a'"></span></td>
+                            <td><span ng-bind="file.properties.uploaded | date: 'yyyy / MM / dd hh:mm:ss a'"></span></td>
+                            <td><button class="btn btn-xs btn-danger" ng-click="fivm.removeFileFromArray(file)"><span class="glyphicon glyphicon-remove" ></span>&zwj;</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default" ng-click="fivm.closeModal()">Close</button>
+</div>
+
+<script>
+    // Check for the various File API support.
+    if (window.File && window.FileReader && window.FileList && window.Blob)
+    {
+//                alert('The File API is ready to use');
+    } else
+    {
+    alert('The File APIs are not fully supported in this browser.');
+    }
+</script>

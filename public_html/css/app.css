@@ -1,0 +1,172 @@
+/*@import url("");*/
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
+a {
+    cursor: pointer;
+}
+
+.btn {
+    transition: background 0.3s ease-in-out;
+}
+
+/************************************************************************************
+    .container
+************************************************************************************/
+
+.container
+{
+
+}
+
+.container > .container-heading
+{
+    /*    padding:25px 0;*/
+    text-align:center;
+    margin-top:30px;
+}
+
+.container > .container-heading > .container-title
+{
+    font-size:30pt;
+    text-transform: uppercase
+}
+
+.container > .container-body {
+    position: relative;
+    background: #fefefe;
+    border: 1px solid #d8d8d8;
+    border-radius: 2px 2px 0 0;
+    border-bottom: none;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom:25px;
+}
+
+.container > .container-body > main 
+{
+    position:relative;
+    top:0;
+    opacity:1;
+    padding: 15px 25px;
+    width: 100%;
+    margin-bottom:50px;
+}
+
+.view-animate.ng-enter, 
+.view-animate.ng-leave
+{
+    transition:all ease 0.75s;
+    display:block;
+    width:100%;
+}
+
+.view-animate.ng-leave.ng-leave-active
+{
+
+}
+
+.view-animate.ng-enter {
+    opacity:0;
+    left:1%;
+}
+
+.view-animate.ng-enter.ng-enter-active {
+    left:0;
+    opacity:1;
+}
+.view-animate.ng-leave {
+    opacity:1;
+    left:0;
+}
+
+.view-animate.ng-leave.ng-leave-active {
+    transition:all ease 0.4s;
+    position:absolute;
+    /*    top:0;*/
+    right:0;
+    bottom:0;
+    left:1%;
+    opacity:0;
+}
+
+.container > .container-footer
+{
+    position:relative;
+    text-align:center;
+    margin:50px 0 25px;
+    font-size:9pt;
+    padding:15px 30px;
+}
+
+/************************************************************************************
+    site-title
+************************************************************************************/
+
+.app-site-heading
+{
+    position:relative;
+    overflow:hidden;
+}
+
+.app-site-heading-container 
+{
+    text-align:center;
+    margin:50px 0 50px;
+}
+
+.app-site-symbol-loading::before,
+.app-site-heading-container::before
+{
+    content: "";
+    display: block;
+    margin: 0 auto 20px;
+    padding: 0;
+    width: 0;
+    height: 0;
+    border-width: 12px 15px;
+    border-color:transparent darkgray transparent gainsboro;
+    border-radius:0;
+    border-style:solid;
+}
+
+.app-site-heading:hover .app-site-heading-container::before,
+.app-loading::before
+{
+    animation-name: rotation;
+    animation-duration: 1.75s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+
+.app-site-heading-container::after 
+{
+    content:"";
+    display:block;
+    margin:0 auto;
+}
+
+.app-site-heading-container > .app-site-heading-title
+{
+    margin:15px 0;
+}
+
+.app-site-heading-container > ul.app-site-heading-categories.list-inline
+{
+    margin-left:0;
+}
+
+@keyframes rotation {
+    0% {transform: rotate(0deg); border-width: 12px 15px;
+        border-color:transparent darkgray transparent gainsboro;
+        border-radius:0;}
+    50% {transform: rotate(360deg); border-radius:12px; 
+         border-color: darkgray #FFF gainsboro #FFF; 
+         border-width:12px; }
+    100% {transform: rotate(719deg);border-width: 12px 15px;
+          border-color:transparent darkgray transparent gainsboro;
+          border-radius:0; }
+}
