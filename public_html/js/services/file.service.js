@@ -3,12 +3,10 @@
     angular.module('pFile.services')
             .factory('FileService', FileService);
 
-    FileService.$inject = ['$http', '$log', '$q', '$uibModal', 'MyBase64'];
+    FileService.$inject = ['$http', '$log', '$q', '$uibModal'];
 
-    function FileService($http, $log, $q, $uibModal, MyBase64)
+    function FileService($http, $log, $q, $uibModal)
     {
-        var FileObj = FileObj;
-
         var fileImportModal = $uibModal;
         var fileInfoModal = $uibModal;
         var fileManagementModal = $uibModal;
@@ -207,11 +205,9 @@
                 controllerAs: 'fivm',
                 bindToController: true
             }).result
-                    .then(function (response) {
-                        //SUCCESS
+                    .then(function success(response) {
                         return response;
-                    }, function (response) {
-                        // ERROR
+                    }, function error(response) {
                         return $q.reject(response);
                     });
         }
@@ -299,84 +295,5 @@
             e.initEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
             a.dispatchEvent(e);
         }
-
-
-        function FileObj(File, data)
-        {
-            var lastDotIndex;
-            var dataType;
-
-            //Datentyp der ausgewählten Datei herausfiltern
-            if (angular.isDefined(File))
-            {
-                if (angular.isDefined(File.name))
-                {
-                    lastDotIndex = File.name.toString().lastIndexOf('.') + 1;
-                    dataType = File.name.toString().slice(lastDotIndex, File.name.length);
-                }
-            }
-
-            var pub = {
-                original: {
-                    data: data
-                },
-                data: data,
-                properties: {
-                    name: (angular.isDefined(File)) ? File.name : undefined,
-                    size: (angular.isDefined(File)) ? File.size : undefined,
-                    type: (angular.isDefined(File)) ? File.type : undefined,
-                    dataType: dataType || undefined,
-                    lastModified: (angular.isDefined(File)) ? File.lastModified : undefined,
-                    uploaded: (new Date()).getTime()
-                },
-                setData: setData,
-                setProperties: setProperties,
-                isImage: isImage,
-                isJson: isJson,
-                isText: isText
-            };
-
-            return pub;
-
-            ///////////////////////////////////////////////////////////////////////////////////////////
-
-            function setData(data)
-            {
-                this.data = data;
-            }
-
-            function setProperties(properties)
-            {
-                for (var prop in properties)
-                {
-                    if (this.properties[prop] && angular.isDefined(this.properties[prop]))
-                    {
-                        this.properties[prop] = properties[prop];
-                    }
-                }
-            }
-
-            function isImage()
-            {
-                if (this.properties.type === 'image/png' || this.properties.type === 'image/jpeg')
-                    return true;
-                return false;
-            }
-
-            function isJson()
-            {
-                if (this.properties.type === 'application/json' || this.properties.dataType === 'json')
-                    return true;
-                return false;
-            }
-
-            function isText()
-            {
-                if (this.properties.type === 'plain/text' || this.properties.dataType === 'txt')
-                    return true;
-                return false;
-            }
-        }
     }
-
 })();
