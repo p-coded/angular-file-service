@@ -39,7 +39,7 @@
                     <tbody>
                         <tr ng-repeat="file in fivm.importedFilesArray track by $index">
                             <td><span ng-bind="file.properties.name"></span></td>
-                            <td><span ng-bind="file.properties.size | convertToMb"></span></td>
+                            <td><span ng-bind="file.properties.size | convertFileSize"></span></td>
                             <td><span ng-bind="file.properties.type"></span></td>
                             <td><span ng-bind="file.properties.lastModified | date: 'yyyy / MM / dd hh:mm:ss a'"></span></td>
                             <td><span ng-bind="file.properties.uploaded | date: 'yyyy / MM / dd hh:mm:ss a'"></span></td>

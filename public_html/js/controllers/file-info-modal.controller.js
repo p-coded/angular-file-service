@@ -4,16 +4,15 @@
     angular.module('pFile')
             .controller('FileInfoModalController', FileInfoModalController);
 
-    FileInfoModalController.$inject = ['$log', '$scope', 'FileService', '$timeout', 'MyBase64'];
+    FileInfoModalController.$inject = ['$log', '$scope', '$timeout', 'FileService'];
 
-    function FileInfoModalController($log, $scope, FileService, $timeout, MyBase64)
+    function FileInfoModalController($log, $scope, $timeout, FileService)
     {
         var vm = this;
         vm.file;
         vm.closeModal = closeModal;
-        vm.decode = decode;
 
-        (function activate()
+        (function init()
         {
             vm.file = $scope.$resolve.file;
             $timeout(function () {
@@ -35,22 +34,16 @@
                                     .catch(function (e) {
                                         $log.debug("Bad data", vm.file);
                                     });
-                        default:
-                            $log.info("Datentyp wird verarbeitet ", vm.file.properties.type, vm.file.properties.dataType, vm.file);
                     }
                 }
             });
         })();
+        
         /////////////////////////////////////////////////////////////////////////////////////////////////////
 
         function closeModal()
         {
             vm.$close("Close Modal");
-        }
-
-        function decode(data)
-        {
-            return MyBase64.decode(data);
         }
     }
 })();

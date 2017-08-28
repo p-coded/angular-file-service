@@ -1,7 +1,7 @@
 (function () {
     "use strict";
 
-    angular.module('pFile')
+    angular.module('app')
             .controller('NavigationController', NavigationController);
 
     NavigationController.$inject = ['$log', '$scope', '$location', '$interval'];

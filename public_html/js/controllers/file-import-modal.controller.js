@@ -24,11 +24,8 @@
         //////////////////////////////////////////////////////////////////////////////////////////
         (function init()
         {
-            // Init something
             vm.allowedFileTypes = $scope.$resolve.allowedFileTypes;
             vm.allowedFileTypeExtensions = $scope.$resolve.allowedFileTypeExtensions;
-            $log.debug("Data", $scope.$resolve);
-
         })();
         //////////////////////////////////////////////////////////////////////////////////////////
 

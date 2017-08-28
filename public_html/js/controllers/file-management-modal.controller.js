@@ -13,10 +13,7 @@
         
         (function init()
         {
-            $log.debug("Scope", $scope);
-            $log.debug("Vm", vm);
             setFiles($scope.$resolve.files);
-            $log.debug("Files", vm.files);
         })();
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -25,14 +22,13 @@
         {
             vm.files = files;
         }
-         
-
+        
         /////////////////////////////////////////////////////////////////////////////////////////////////////
 
         function closeModal()
         {
+            // evtl. Rückggabewert
             vm.$close("Close Modal");
         }
-
     }
 })();
