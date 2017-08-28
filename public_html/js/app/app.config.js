@@ -1,6 +1,7 @@
-(function () {
+(function () 
+{
     "use strict";
-    angular.module('pFile')
+    angular.module('app')
             .config(AppConfiguration)
             .run(AppRun);
 

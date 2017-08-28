@@ -1,7 +1,8 @@
-(function () {
+(function () 
+{
     "use strict";
 
-    angular.module('pFile')
+    angular.module('app')
             .controller('AppController', AppController);
 //            .animation('.view-animate', ViewChangeAnimation);
 
