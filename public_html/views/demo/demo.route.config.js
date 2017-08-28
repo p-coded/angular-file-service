@@ -1,7 +1,7 @@
 (function () {
     "use strict";
 
-    angular.module('pFile.demo')
+    angular.module('app.demo')
             .config(DemoRouteConfiguration);
 
     DemoRouteConfiguration.$inject = ['$routeProvider'];

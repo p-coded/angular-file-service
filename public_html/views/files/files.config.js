@@ -1,7 +1,7 @@
 (function () {
     "use strict";
     
-    angular.module('pFile.files')
+    angular.module('app.files')
             .config(FilesConfiguration);
 
     FilesConfiguration.$inject = [];

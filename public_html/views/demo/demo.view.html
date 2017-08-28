@@ -1,11 +1,15 @@
 <div class="app-site-heading">
     <div class="app-site-heading-container">
-        <h1 class="text-center app-site-heading-title"><span ng-bind="vm.title"></span></h1>
+        <h1 class="app-site-heading-title text-center"><span ng-bind="vm.title"></span></h1>
     </div>
 </div>
 
 <div class="row">
-    <div class="col col-md-6">
-<!--        <editable-value value="vm.title"></editable-value>-->
+    <div class="col col-md-6 col-md-offset-3">
+        <div class="btn-group">
+            <file-input-button save="vm.save(data)" icon="glyphicon glyphicon-import"></file-input-button>
+            <button class="btn btn-default" ng-click="vm.openModal()">Open Modal</button>
+        </div>
+        <p><pre ng-bind="vm.data | json"></pre></p>
     </div>
 </div>

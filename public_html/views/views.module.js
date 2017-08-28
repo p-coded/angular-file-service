@@ -1,5 +1,5 @@
 (function () {
     "use strict";
     
-    angular.module('pFile.views', ['pFile.demo', 'pFile.files']);
+    angular.module('app.views', ['app.demo', 'app.files']);
 })();

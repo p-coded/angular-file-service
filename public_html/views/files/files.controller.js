@@ -1,6 +1,6 @@
 (function () {
     "use strict";
-    angular.module('pFile.files')
+    angular.module('app.files')
             .controller('FilesController', FilesController);
 
     FilesController.$inject = ['$log', '$scope', 'FileService', '$uibModal'];
