@@ -2,9 +2,9 @@
     "use strict";
 
     angular.module('pFile.filter')
-            .filter('convertToMb', ConvertToMbFilter);
+            .filter('convertFileSize', convertFileSizeFilter);
 
-    function ConvertToMbFilter()
+    function convertFileSizeFilter()
     {
         var filter = filter;
 
