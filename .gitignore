@@ -1,0 +1,10 @@
+
+public_html/views/x/x.view.html
+public_html/views/x/x.route.config.js
+public_html/views/x/x.module.js
+public_html/views/x/x.controller.js
+public_html/views/x/x.config.js
+public_html/js/services/x.provider.service.js
+public_html/js/services/x.factory.service.js
+/.tmp/
+/public_html/views/x/
