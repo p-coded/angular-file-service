@@ -6,9 +6,6 @@
     RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
     RewriteRule ^ - [L]
 
-    # If the requested resource doesn't exist, use index.html    
-    #RewriteRule ^ /public_html/index.html
+    # If the requested resource doesn't exist, use index.html
     RewriteRule ^ /index.html
 </IfModule>
-
-# Source: https://ngmilk.rocks/2015/03/09/angularjs-html5-mode-or-pretty-urls-on-apache-using-htaccess/
