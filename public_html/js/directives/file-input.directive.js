@@ -1,6 +1,6 @@
 (function () {
     "use strict";
-    angular.module('pFile')
+    angular.module('pFile.directives')
             .directive('fileInput', FileInputDirective);
     FileInputDirective.$inject = ['$log'];
     function FileInputDirective($log)
