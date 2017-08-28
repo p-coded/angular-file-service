@@ -11,8 +11,12 @@
         <!-- Bootstrap -->
         <link type="text/css" href="lib/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
         <link type="text/css" href="css/app.css" rel="stylesheet">
+        
+        <!-- build:css css/angular-file-service.min.css -->
         <link type="text/css" href="css/file-input-directive.css" rel="stylesheet">
         <link type="text/css" href="css/files.view.css" rel="stylesheet">
+        <!-- endbuild -->
+        
         <link type="image/x-icon" rel="shortcut icon" href="img/favicon.png" >
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -54,21 +58,24 @@
         <script type="text/javascript" src="js/app/app.config.js"></script>
         <script type="text/javascript" src="js/app/app.controller.js"></script>
         <script type="text/javascript" src="js/app/app.route.config.js"></script>
-
-        <script type="text/javascript" src="js/utils/utils.module.js"></script>
         <script type="text/javascript" src="js/controllers/navigation.controller.js"></script>
+        <script type="text/javascript" src="views/views.module.js"></script>
+
+        <!-- build:js js/angular-file-service.js -->
+        <script type="text/javascript" src="js/main.module.js"></script>
         <script type="text/javascript" src="js/filter/filter.module.js"></script>
         <script type="text/javascript" src="js/services/services.modul.js"></script>
-        <script type="text/javascript" src="views/views.module.js"></script>
-        
+        <script type="text/javascript" src="js/services/file.service.js"></script>
+        <script type="text/javascript" src="js/services/file.class.js"></script>
+        <script type="text/javascript" src="js/directives/directives.modul.js"></script>
+        <script type="text/javascript" src="js/directives/file-input-button.directive.js"></script>
+        <script type="text/javascript" src="js/directives/file-input.directive.js"></script>
+        <script type="text/javascript" src="js/directives/file-list.directive.js"></script>
         <script type="text/javascript" src="js/controllers/file-import-modal.controller.js"></script>
         <script type="text/javascript" src="js/controllers/file-info-modal.controller.js"></script>
         <script type="text/javascript" src="js/controllers/file-management-modal.controller.js"></script>
-        <script type="text/javascript" src="js/services/file.service.js"></script>
-        <script type="text/javascript" src="js/services/base64.service.js"></script>
-        <script type="text/javascript" src="js/directives/file-input.directive.js"></script>
-        <script type="text/javascript" src="js/directives/file-management.directive.js"></script>
         <script type="text/javascript" src="js/filter/files.filter.js"></script>
+        <!-- endbuild -->
 
         <script type="text/javascript" src="views/demo/demo.module.js"></script>
         <script type="text/javascript" src="views/demo/demo.config.js"></script>
